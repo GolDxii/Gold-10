@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HTML</title>
+  
+  <!-- HTML -->
+  
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <p align=center>Student of CNHS</p>
+  <!-- Project -->
+  <script src="main.js"></script>
+</body>
+</html>
+Certainly! Below is a simple implementation of a "Rock, Paper, Scissors" game using HTML, CSS, and JavaScript:
+
+HTML + CSS + JavaScript Code by:Den ian cuyos
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f0f0f0;
+      padding: 50px;
+    }
+    .buttons {
+      margin: 20px;
+    }
+    .buttons button {
+      padding: 20px;
+      font-size: 20px;
+      margin: 10px;
+      cursor: pointer;
+    }
+    .result {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Rock Paper Scissors</h1>
+
+  <div class="buttons">
+    <button onclick="playGame('rock')">Rock</button>
+    <button onclick="playGame('paper')">Paper</button>
+    <button onclick="playGame('scissors')">Scissors</button>
+  </div>
+
+  <div class="result">
+    <p id="resultMessage"></p>
+    <p id="userChoice"></p>
+    <p id="computerChoice"></p>
+  </div>
+
+  <script>
+    function playGame(userChoice) {
+      const choices = ['rock', 'paper', 'scissors'];
+      const computerChoice = choices[Math.floor(Math.random() * 3)];
+      let resultMessage = '';
+
+      if (userChoice === computerChoice) {
+        resultMessage = 'It\'s a tie!';
+      } else if (
+        (userChoice === 'rock' && computerChoice === 'scissors') ||
+        (userChoice === 'paper' && computerChoice === 'rock') ||
+        (userChoice === 'scissors' && computerChoice === 'paper')
+      ) {
+        resultMessage = 'You win!';
+      } else {
+        resultMessage = 'You lose!';
+      }
+
+      document.getElementById('resultMessage').innerText = resultMessage;
+      document.getElementById('userChoice').innerText = 'You chose: ' + userChoice;
+      document.getElementById('computerChoice').innerText = 'Computer chose: ' + computerChoice;
+    }
+  </script>
+
+</body>
+</html>
